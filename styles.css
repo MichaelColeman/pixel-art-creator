@@ -1,0 +1,42 @@
+@font-face {
+  src: url('/fonts/Pixelmania.ttf') format('truetype');
+  font-family: Pixel;
+  font-weight: normal;
+}
+
+:root {
+  --secondary-color: #545B5A;
+  --main-background-color: #E9ECE6;
+  --border-color: #C0DFD9;
+}
+
+body {
+  background-color: var(--main-background-color);
+  margin: 0px;
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  margin: 0;
+  padding: 10px;
+  font-size: 20px;
+  font-family: Pixel, sans-serif;
+}
+
+.logoImage {
+  height: 50px;
+  width: 50px;
+  padding: 10px;
+}
+
+header,footer {
+  display: flex;
+  height: 75px;
+  background-color: var(--secondary-color);
+  border-bottom: 10px solid var(--border-color);
+}
