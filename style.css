@@ -4,7 +4,8 @@
   --secondary-color: #545b5a;
   --main-background-color: #e9ece6;
   --border-color: #c0dfd9;
-  --grid-default-color: rgba(255, 255, 255, 0.8);
+  --grid-default-color: rgba(255, 255, 255, 0.788);
+  --grid-hover-color: rgba(255, 255, 255, 0.1);
 }
 
 * {
@@ -18,10 +19,12 @@
   flex-direction: column;
   margin: 0px;
   background-color: var(--main-background-color);
+  height: 100vh;
 }
 
 .main-content {
   display: flex;
+  flex: 0 1 100%;
   flex-direction: column;
   align-items: center;
 }
@@ -29,27 +32,28 @@
 .grid-container {
   display: grid;
   grid-template-columns: repeat(16, 1fr);
-  margin: auto;
+  margin: auto auto 0 auto;
   padding: 10px;
   width: 500px;
   height: 500px;
 }
 
 .grid-item {
-  border: 1px solid rgba(78, 78, 78, 0.11);
+  border: 1px solid rgba(78, 78, 78, 0.075);
   background-color: var(--grid-default-color);
   font-size: 10px;
   text-align: center;
 }
 
 .grid-item:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--grid-hover-color);
 }
 
 .tools-container {
   display: flex;
   align-items: center;
   gap: 10px;
+  margin: 0 auto auto auto;
   padding: 10px;
   width: 500px;
 }
@@ -79,7 +83,7 @@
 header,
 footer {
   display: flex;
-  flex: 0 1 100%;
+  flex: 0 1 auto;
   border-bottom: 10px solid var(--border-color);
   background-color: var(--secondary-color);
   width: 100%;
@@ -101,5 +105,3 @@ footer img {
   width: 30px;
   height: 30px;
 }
-
-/*102 lines pre css refactor*/
