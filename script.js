@@ -1,6 +1,7 @@
+const gridContainer = document.querySelector('.js-grid-container');
+const resizeGridButton = document.querySelector('.js-resize-canvas');
+
 function createGrid(sideLength = 16) {
-  //find grid container
-  let gridContainer = document.querySelector('.js-grid-container');
   //delete current grid
   let child = gridContainer.lastElementChild;
   while (child) {
@@ -31,7 +32,11 @@ function resizeGrid() {
   createGrid(sideLength);
 }
 
-const resizeGridButton = document.querySelector('.js-resize-canvas');
+function changeDrawingColor() {}
+
+gridContainer.addEventListener('click', function (e) {
+  e.target.classList.toggle('brush-color');
+});
 resizeGridButton.addEventListener('click', function (e) {
   resizeGrid();
   console.log(`yo ${e.target}`);
