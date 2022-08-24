@@ -34,7 +34,7 @@ function resizeGrid() {
 
 function changeDrawingColor() {}
 
-gridContainer.addEventListener('click', function (e) {
+gridContainer.addEventListener('mousedown', function (e) {
   e.target.classList.toggle('brush-color');
 });
 resizeGridButton.addEventListener('click', function (e) {
