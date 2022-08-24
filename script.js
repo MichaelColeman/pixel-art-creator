@@ -1,7 +1,6 @@
-function createGrid(sideLength) {
+function createGrid(sideLength = 16) {
   //find grid container
   let gridContainer = document.querySelector('.js-grid-container');
-
   //delete current grid
   let child = gridContainer.lastElementChild;
   while (child) {
@@ -11,7 +10,6 @@ function createGrid(sideLength) {
 
   //change number of grid columns to be equal to the sideLength
   gridContainer.style.cssText = `grid-template-columns: repeat(${sideLength}, 1fr)`;
-
   //create grid
   for (let i = 0; i < sideLength * sideLength; i++) {
     const newDiv = document.createElement('div');
@@ -20,9 +18,12 @@ function createGrid(sideLength) {
   }
 }
 
-function getGridLength() {
-  const userChoice = prompt('enter size of new grid');
-  return userChoice;
+function getGridLength(defaultGridSize = 16) {
+  const userChoice = prompt('enter size of new grid', defaultGridSize);
+  if (userChoice >= 8 && userChoice <= 64) {
+    return userChoice;
+  }
+  return defaultGridSize;
 }
 
 function resizeGrid() {
@@ -36,4 +37,4 @@ resizeGridButton.addEventListener('click', function (e) {
   console.log(`yo ${e.target}`);
 });
 
-createGrid(16);
+createGrid();

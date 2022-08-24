@@ -6,6 +6,7 @@
   --border-color: #c0dfd9;
   --grid-default-color: rgba(255, 255, 255, 0.788);
   --grid-hover-color: rgba(255, 255, 255, 0.1);
+  --header-footer-color: rgb(255, 255, 255);
 }
 
 * {
@@ -33,7 +34,9 @@
   display: grid;
   grid-template-columns: repeat(16, 1fr);
   margin: auto auto 0 auto;
-  padding: 10px;
+  border: 0.5rem solid var(--border-color);
+  border-radius: 5px;
+  padding: 0px;
   width: 400px;
   height: 400px;
 }
@@ -60,6 +63,7 @@
 }
 
 .tools-container button {
+  border-color: var(--border-color);
   border-radius: 50%;
   padding: 5px;
 }
@@ -72,6 +76,7 @@
 
 .logo {
   padding: 10px;
+  color: var(--secondary-color);
   font-size: 2em;
 }
 
@@ -85,10 +90,14 @@ header,
 footer {
   display: flex;
   flex: 0 1 auto;
-  border-bottom: 10px solid var(--border-color);
-  background-color: var(--secondary-color);
+  background-color: var(--header-footer-color);
   width: 100%;
   height: 75px;
+}
+
+header {
+  margin-bottom: 10px;
+  border-bottom: 10px solid var(--border-color);
 }
 
 footer {
@@ -96,6 +105,7 @@ footer {
   justify-content: center;
   align-items: center;
   gap: 20px;
+  border-top: 10px solid var(--border-color);
 }
 
 footer p {
